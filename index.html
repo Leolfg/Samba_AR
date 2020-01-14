@@ -2,6 +2,8 @@
 <html>
 <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
 <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
+<script src="js/aframe-extras.min.js"></script>
+
 
 <body style='margin : 0px; overflow: hidden;'>
   <a-scene color-space="sRGB" renderer="colorManagement: true;"
@@ -9,7 +11,7 @@
 
         <a-assets>
             <img id="stagetexte" src="stagetexte.png">
-            <a-asset-item id="leo_samba_gltf" src="leo_nolight.gltf"></a-asset-item>
+            <a-asset-item id="leo_samba_gltf" src="leo_samba_texture.gltf"></a-asset-item>
         </a-assets>
 
         <a-marker type="pattern" url="AR_Marker.patt">
