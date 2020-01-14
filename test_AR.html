@@ -1,0 +1,29 @@
+﻿<!doctype HTML>
+<html>
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
+
+<body style='margin : 0px; overflow: hidden;'>
+  <a-scene color-space="sRGB" renderer="colorManagement: true;"
+  embedded arjs="patternRatio: 0.7; debugUIEnabled: false">
+
+        <a-assets>
+            <img id="stagetexte" src="stagetexte.png">
+            <a-asset-item id="leo_samba_gltf" src="leo_samba_texture.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-marker type="pattern" url="AR_Marker.patt">
+
+          <a-entity id="gtlfleo" gltf-model="#leo_samba_gltf" scale="23 23 23" position="0 0 0" rotation="0 150 0"
+          animation-mixer="clip: ANIM_1;"></a-entity>
+
+          <a-plane id="titre_plane" position="0 2.5 0" rotation="0 0 0" width="1" height="1"
+          material="src: #stagetexte; transparent: true; alphaTest: 0.5; shader: flat;" scale="0.75 0.75 0.75" geometry="" ></a-plane>
+
+            <a-box position='0 0.5 0' material='color: yellow; opacity: 0'></a-box>
+            <a-entity light="color: #BBB; type: ambient"></a-entity>
+  </a-marker>
+  <a-entity camera></a-entity>
+</a-scene>
+</body>
+</html>
